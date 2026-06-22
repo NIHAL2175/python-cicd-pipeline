@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Python CI/CD Pipeline 
+# 🚀 Python CI/CD Pipeline      
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI%2FCD-orange) ![Pytest](https://img.shields.io/badge/Pytest-Automated%20Testing-green) ![Automation](https://img.shields.io/badge/Automation-Enabled-brightgreen)
 
@@ -332,7 +332,7 @@ Pipeline Success
 
 # 👨‍💻 Author
 
-### NIHAL N
+### NIHAL N   
 
 DevOps • Cloud
 
