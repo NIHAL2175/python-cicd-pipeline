@@ -184,8 +184,8 @@ body {
 }
 
 /* Special Button Styling */
-.btn[data-value="0"] {
-    /* Remove span 2 - make it same size as other buttons */
+.btn[data-action]{
+     grid-column: span 1;
 }
 
 /* Memory buttons layout */
