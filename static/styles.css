@@ -1,0 +1,290 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Calculator Container */
+.calculator-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.calculator-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Display */
+.display {
+    background: linear-gradient(145deg, #2c3e50, #34495e);
+    color: white;
+    padding: 30px 20px;
+    text-align: right;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.memory-indicator {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 5px;
+    min-height: 27px;
+}
+
+.current-operand {
+    font-size: 36px;
+    font-weight: 300;
+    word-wrap: break-word;
+    overflow: hidden;
+    line-height: 1.2;
+}
+
+/* Memory Row */
+.memory-row {
+    display: flex;
+    gap: 1px;
+    background: #ecf0f1;
+    padding: 1px;
+}
+
+.memory-row .btn {
+    flex: 1;
+    padding: 10px 8px;
+    font-size: 12px;
+}
+
+/* Buttons Grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #ecf0f1;
+}
+
+
+
+/* Button Base Styles */
+.btn {
+    border: none;
+    outline: none;
+    background: white;
+    font-size: 20px;
+    font-weight: 500;
+    color: #2c3e50;
+    padding: 25px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    background: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Types */
+.btn.number {
+    background: white;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.btn.number:hover {
+    background: #e8f4fd;
+}
+
+.btn.operator {
+    background: #f8f9fa;
+    color: #e74c3c;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.btn.operator:hover {
+    background: #ffeaea;
+}
+
+.btn.equals {
+    background: linear-gradient(145deg, #e74c3c, #c0392b);
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.btn.equals:hover {
+    background: linear-gradient(145deg, #c0392b, #a93226);
+}
+
+.btn.clear, .btn.clear-entry {
+    background: #f39c12;
+    color: white;
+    font-weight: 600;
+}
+
+.btn.clear:hover, .btn.clear-entry:hover {
+    background: #e67e22;
+}
+
+.btn.delete {
+    background: #e67e22;
+    color: white;
+    font-weight: 600;
+}
+
+.btn.delete:hover {
+    background: #d35400;
+}
+
+.btn.memory {
+    background: #9b59b6;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn.memory:hover {
+    background: #8e44ad;
+}
+
+/* Special Button Styling */
+.btn[data-value="0"] {
+    /* Remove span 2 - make it same size as other buttons */
+}
+
+/* Memory buttons layout */
+.btn.memory {
+    grid-column: span 1;
+}
+
+/* Placeholder for empty button space */
+.btn-placeholder {
+    background: #f0f0f0;
+    border: none;
+    cursor: default;
+}
+
+/* Equals button styling */
+.btn.equals {
+    /* Same size as other buttons in the row */
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .calculator-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    .calculator-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .btn {
+        padding: 20px 10px;
+        font-size: 18px;
+    }
+    
+    .btn.number {
+        font-size: 20px;
+    }
+    
+    .btn.operator {
+        font-size: 18px;
+    }
+    
+    .current-operand {
+        font-size: 28px;
+    }
+    
+    .previous-operand {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .btn {
+        padding: 15px 8px;
+        font-size: 16px;
+    }
+    
+    .btn.number {
+        font-size: 18px;
+    }
+    
+    .btn.operator {
+        font-size: 16px;
+    }
+    
+    .btn.memory {
+        font-size: 14px;
+    }
+}
+
+/* Focus styles for accessibility */
+.btn:focus {
+    outline: 2px solid #3498db;
+    outline-offset: -2px;
+}
+
+/* Animation for button press */
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.btn:active {
+    animation: buttonPress 0.1s ease;
+}
+
+/* Error state */
+.error {
+    color: #e74c3c !important;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+} 

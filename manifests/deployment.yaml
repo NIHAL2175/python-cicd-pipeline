@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: python-cicd-app
+  namespace: python-cicd
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: python-cicd-app
+
+  template:
+    metadata:
+      labels:
+        app: python-cicd-app
+
+    spec:
+      imagePullSecrets:
+        - name: ecr-secret
+
+      containers:
+        - name: python-cicd-app
+          image: python-cicd-pipeline:v2
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 8000
